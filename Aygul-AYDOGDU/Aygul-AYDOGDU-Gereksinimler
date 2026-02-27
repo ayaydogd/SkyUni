@@ -1,79 +1,79 @@
 1. Kayıt Olma
-    API Metodu: POST /auth/register
+    API Metodu: `POST /auth/register`
     Açıklama: Öğrencilerin sadece kendilerine ait üniversite e-posta adreslerini ve belirledikleri şifreyi kullanarak platforma yeni hesap oluşturmasını sağlar. Bu işlem sayesinde dışarıya kapalı, güvenli bir öğrenci topluluğu oluşturulur.
 
 2. Giriş Yapma
-    API Metodu: POST /auth/login
+    API Metodu: `POST /auth/login`
     Açıklama: Sisteme daha önceden kayıt olmuş öğrencilerin, e-posta ve şifre bilgilerini doğrulayarak kendi hesaplarına güvenli bir şekilde erişim sağlamasını içerir.
 
 3. Çıkış Yapma
-    API Metodu: POST /auth/logout
+    API Metodu: `POST /auth/logout`
     Açıklama: Öğrencilerin platform üzerindeki aktif oturumlarını sonlandırarak sistemden güvenli bir şekilde ayrılmalarını sağlar. Özellikle ortak kullanılan cihazlarda hesap güvenliği için gereklidir.
 
 4. Profil Bilgilerini Görüntüleme
-    API Metodu: GET /users/{userId}
+    API Metodu: `GET /users/{userId}`
     Açıklama: Öğrencilerin platform üzerinde kendilerine ait olan ad, soyad, üniversite bilgisi ve kazandıkları başarımlar gibi detayları incelemesini sağlar.
 
 5. Profil Bilgilerini Güncelleme
-    API Metodu: PUT /users/{userId}
+    API Metodu: `PUT /users/{userId}`
     Açıklama: Öğrencilerin hesaplarına ait mevcut kişisel bilgilerinde (kısa özgeçmiş, avatar vb.) veya şifrelerinde değişiklik yapmasını sağlar. Kullanıcılar yalnızca kendi bilgilerini güncelleyebilir.
 
 6. Hesabı Silme
-    API Metodu: DELETE /users/{userId}
+    API Metodu: `DELETE /users/{userId}`
     Açıklama: Öğrencilerin platformdaki üyeliklerini sonlandırması ve kendilerine ait tüm bilgileri sistemden kalıcı olarak kaldırmasını sağlar. Bu işlem geri alınamaz ve kullanıcının verileri silinir.
 
 7. Üniversiteleri Listeleme
-    API Metodu: GET /universities
+    API Metodu: `GET /universities`
     Açıklama: Sisteme daha önceden eklenmiş olan tüm eğitim kurumlarının liste halinde görüntülenmesini sağlar. Kullanıcılar platformda hangi okulların olduğunu bu sayede inceler.
 
 8. Üniversite Ekleme
-    API Metodu: POST /universities
+    API Metodu: `POST /universities`
     Açıklama: Platformda henüz bulunmayan yeni bir eğitim kurumunun sisteme dahil edilmesini sağlar. Kurumun adı ve internet adresi gibi temel bilgileri kaydedilir.
 
 9. Üniversite Silme
-    API Metodu: DELETE /universities/{universityId}
+    API Metodu: `DELETE /universities/{universityId}`
     Açıklama: Sistemde kayıtlı olan bir eğitim kurumunun, platformdan tamamen çıkarılmasını sağlar.
 
 10. Kanalları Listeleme
-    API Metodu: GET /channels
+    API Metodu: `GET /channels`
     Açıklama: Platform içerisinde belirli konularda tartışmak için açılmış olan tüm sohbet odalarının ve konu başlıklarının liste halinde görüntülenmesini sağlar.
 
 11. Kanal Oluşturma
-    API Metodu: POST /channels
+    API Metodu: `POST /channels`
     Açıklama: Öğrencilerin yeni bir konu, ortak ilgi alanı veya ders hakkında fikir alışverişi yapmak için platformda özel bir sohbet odası açmasını sağlar.
 
 12. Kanal Silme
-    API Metodu: DELETE /channels/{channelId}
+    API Metodu: `DELETE /channels/{channelId}`
     Açıklama: Önceden oluşturulmuş bir sohbet odasının platformdan kalıcı olarak kaldırılmasını sağlar. Odanın içindeki mevcut tartışmalar da erişime kapatılır.
 
 13. Mesajları Listeleme
-    API Metodu: GET /channels/{channelId}/messages
+    API Metodu: `GET /channels/{channelId}/messages`
     Açıklama: Seçilen bir sohbet odasında daha önce diğer öğrenciler tarafından yazılmış olan yazıların zaman sırasına göre ekranda okunmasını sağlar.
 
 14. Mesaj Gönderme
-    API Metodu: POST /channels/{channelId}/messages
+    API Metodu: `POST /channels/{channelId}/messages`
     Açıklama: Öğrencilerin bir sohbet odasına kendi fikirlerini, sorularını veya ders notlarını metin olarak eklemesini sağlar. Mesajlar ilgili kanaldaki diğer öğrenciler tarafından okunabilir.
 
 15. Mesaj Düzenleme
-    API Metodu: PUT /messages/{messageId}
+    API Metodu: `PUT /messages/{messageId}`
     Açıklama: Öğrencilerin daha önceden yazmış oldukları kendi yazılarını sonradan değiştirerek düzeltmesini sağlar. Bir kullanıcı sadece kendi gönderdiği içeriklere müdahale edebilir.
 
 16. Mesaj Silme
-    API Metodu: DELETE /messages/{messageId}
+    API Metodu: `DELETE /messages/{messageId}`
     Açıklama: Öğrencilerin daha önce göndermiş oldukları kendi yazılarını bulundukları sohbet odasından tamamen silmesini sağlar.
 
 17. Hocaları Listeleme
-    API Metodu: GET /universities/{universityId}/professors
+    API Metodu: `GET /universities/{universityId}/professors`
     Açıklama: Seçilen bir eğitim kurumunda görev yapan akademisyenlerin isimlerinin görüntülenmesini sağlar. Öğrenciler bu sayede hoca değerlendirmelerine ulaşabilir.
 
 18. Hoca Ekleme
-    API Metodu: POST /universities/{universityId}/professors
+    API Metodu: `POST /universities/{universityId}/professors`
     Açıklama: Sistemde henüz kaydı bulunmayan bir akademisyenin isim ve bölüm bilgilerinin platforma kaydedilmesini sağlar. Böylece o hoca hakkında konuşulabilmesinin önü açılır.
 
 19. Dersleri Listeleme
-    API Metodu: GET /universities/{universityId}/courses
+    API Metodu: `GET /universities/{universityId}/courses`
     Açıklama: Seçilen bir eğitim kurumunda verilen derslerin isimlerinin liste halinde sunulmasını sağlar. Alt dönem öğrencileri bu sayede alınacak dersleri inceler.
 
 20. Ders Ekleme
-    API Metodu: POST /universities/{universityId}/courses
+    API Metodu: `POST /universities/{universityId}/courses`
     Açıklama: Sistemde henüz kaydı bulunmayan yeni bir dersin adının ve kodunun platforma dahil edilmesini sağlar.

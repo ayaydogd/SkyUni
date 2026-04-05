@@ -1,14 +1,7 @@
-
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 5d498c53cbe6d6da02e08c7cb1715362906a68bb
 PROJE ADI: SkyUni
 
 SkyUni, üniversite öğrencilerinin hem akademik hem de sosyal hayatını dijitale taşıyan, sadece öğrencilere özel kapalı bir ağdır. 
 Temelde Ekşi Sözlük'teki bilgi paylaşımı ve başlık kültürünü alıp, Discord'un çoklu kanal yapısı ve dinamizmiyle harmanlıyor. 
-
 
 **Üniversite Öğrencilerine Özel Yeni Nesil Etkileşim Platformu**
 
@@ -18,15 +11,11 @@ Temelde Ekşi Sözlük'teki bilgi paylaşımı ve başlık kültürünü alıp, 
 
 ![SkyUni Tanıtım Görseli](SkyUni_gorsel.png)
 
-**Proje Tanımı:** > SkyUni, üniversite öğrencilerinin hem akademik hem de sosyal hayatını dijitale taşıyan, sadece öğrencilere özel kapalı bir ağdır. 
-Temelde Ekşi Sözlük'teki bilgi paylaşımı ve başlık kültürünü alıp, Discord'un çoklu kanal yapısı ve dinamizmiyle harmanlıyor. 
-Öğrenciler burada hem üniversiteler arası fikir alışverişi yapabiliyor hem de ders ve hoca değerlendirmeleriyle birbirlerine rehberlik ediyor. 
-"Challenge" sistemiyle de sosyalleşmeyi oyunlaştırarak kampüs hayatını tek bir platformda birleştiriyor. 
-Sadece .edu uzantılı mail ile kayıt olunabilen, güvenli ve onaylı bir öğrenci topluluğudur.
+**Proje Tanımı:** SkyUni, üniversite öğrencilerinin hem akademik hem de sosyal hayatını dijitale taşıyan, sadece öğrencilere özel kapalı bir ağdır. 
 
-**Proje Kategorisi:** > Sosyal Ağ / Eğlence Platformu
+**Proje Kategorisi:** Sosyal Ağ / Eğlence Platformu
 
-**İlham Alınan Siteler** > [Discord](https://Discord.com/) ve [Ekşi Sözlük](https://eksisozluk.com/)
+**İlham Alınan Siteler:** [Discord](https://Discord.com/) ve [Ekşi Sözlük](https://eksisozluk.com/)
 
 ---
 
@@ -39,15 +28,12 @@ Sadece .edu uzantılı mail ile kayıt olunabilen, güvenli ve onaylı bir öğr
 
 ## Proje Ekibi
 
-**Grup Adı:** > MoonRose
+**Grup Adı:** MoonRose
 
-**Ekip Üyesi:** - Aygül AYDOĞDU
+**Ekip Üyesi:** Aygül AYDOĞDU
 
 ---
 
 ## Dokümantasyon
 
-Proje dokümantasyonuna aşağıdaki linklerden erişebilirsiniz:
-
 1. [Gereksinim Analizi](Gereksinim_Analizi.md)
-01cb458bf00835c2968bf4c49f38d5993e5e8975

@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 5d498c53cbe6d6da02e08c7cb1715362906a68bb
 PROJE ADI: SkyUni
 
 SkyUni, üniversite öğrencilerinin hem akademik hem de sosyal hayatını dijitale taşıyan, sadece öğrencilere özel kapalı bir ağdır. 
@@ -46,4 +50,4 @@ Sadece .edu uzantılı mail ile kayıt olunabilen, güvenli ve onaylı bir öğr
 Proje dokümantasyonuna aşağıdaki linklerden erişebilirsiniz:
 
 1. [Gereksinim Analizi](Gereksinim_Analizi.md)
->>>>>>> 01cb458bf00835c2968bf4c49f38d5993e5e8975
+01cb458bf00835c2968bf4c49f38d5993e5e8975

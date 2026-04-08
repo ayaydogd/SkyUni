@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const API = 'http://localhost:3000'
+const API = 'https://sky-uni-df3v-git-main-ayguls-projects-729fa65b.vercel.app'
 
 function AnaSayfa() {
   const [kanallar, setKanallar] = useState([])

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const API = import.meta.env.VITE_API_URL
 
@@ -59,7 +59,7 @@ function KayitOl() {
         Kayıt Ol
       </button>
       <p style={{ textAlign: 'center', marginTop: '10px' }}>
-        Zaten hesabın var mı? <a href="/giris">Giriş Yap</a>
+        Zaten hesabın var mı? <Link to="/giris">Giriş Yap</Link>
       </p>
     </div>
   )

@@ -1,0 +1,26 @@
+services:
+  # Backend - Web Service
+  - type: web
+    name: skyuni-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        sync: false   # Render dashboard'dan girilecek
+      - key: JWT_SECRET
+        sync: false   # Render dashboard'dan girilecek
+      - key: PORT
+        value: 3000
+
+  # Frontend - Static Site
+  - type: web
+    name: skyuni-frontend
+    runtime: static
+    rootDir: .
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false   # Render dashboard'dan backend URL'i girilecek

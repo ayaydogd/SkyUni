@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const API = 'https://sky-uni-df3v-git-main-ayguls-projects-729fa65b.vercel.app'
+const API = import.meta.env.VITE_API_URL
 
 function GirisYap() {
   const [email, setEmail] = useState('')

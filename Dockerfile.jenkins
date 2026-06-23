@@ -1,0 +1,29 @@
+# SkyUni icin ozel Jenkins imaji.
+# Senin istedigin temel imaj (jenkins/jenkins:lts-jdk17) uzerine
+# Node.js 20 + git + Pipeline/StageView eklentileri ekliyoruz ki
+# pipeline icinde npm / vite / eslint dogrudan calissin (ekstra UI ayari gerekmez).
+FROM jenkins/jenkins:lts-jdk17
+
+USER root
+
+# --- Node.js 20 (npm dahil) ---
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends curl ca-certificates gnupg \
+ && mkdir -p /etc/apt/keyrings \
+ && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+ && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodesource.list \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends nodejs \
+ && node --version && npm --version \
+ && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Mount edilen lokal repoyu (baska kullaniciya ait) git'in guvenli saymasi icin
+RUN git config --system --add safe.directory '*'
+
+# Pipeline + Git + Stage View (asama grafigi) eklentilerini onceden kur
+RUN jenkins-plugin-cli --plugins \
+      workflow-aggregator \
+      git \
+      pipeline-stage-view
+
+USER jenkins

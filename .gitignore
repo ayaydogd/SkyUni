@@ -33,3 +33,12 @@ node_modules
 backend/.env
 backend/node_modules
 .env
+
+# Build artifacts
+mobil/apk/
+*.apk
+
+# Local Claude settings
+**/.claude/settings.local.json
+# Test credentials
+.testcreds

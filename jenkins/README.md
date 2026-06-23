@@ -15,8 +15,11 @@ Bu klasor SkyUni projesi icin lokal Jenkins kurulumunu icerir. Amac: her degisik
 docker build -t skyuni-jenkins:latest -f Dockerfile.jenkins <bos-klasor>
 
 # 2) Container (kalici volume + repo salt-okunur bagli):
+#    JAVA_OPTS: Git plugin lokal (file://) checkout'u guvenlik nedeniyle varsayilan
+#    engeller; ALLOW_LOCAL_CHECKOUT=true ile aciyoruz.
 docker run -d --name skyuni-jenkins --restart unless-stopped \
   -p 8080:8080 -p 50000:50000 \
+  -e JAVA_OPTS="-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true" \
   -v jenkins_home:/var/jenkins_home \
   -v "C:\Users\OMEN\Desktop\SkyUni:/var/skyuni-repo:ro" \
   skyuni-jenkins:latest

@@ -1,6 +1,7 @@
 const University = require('../models/University')
 const Professor = require('../models/Professor')
 const Course = require('../models/Course')
+const redis = require('../redisClient')
 
 // 7. ÜNİVERSİTELERİ LİSTELEME
 const universiteleriListele = async (req, res) => {
@@ -9,7 +10,30 @@ const universiteleriListele = async (req, res) => {
     const limit = parseInt(req.query.limit) || 10
     const atla = (page - 1) * limit
 
+    const cacheKey = `universities:page=${page}:limit=${limit}`
+
+    // 1) Önce cache'e bak (Redis hatası DB'yi engellemesin)
+    try {
+      const cached = await redis.get(cacheKey)
+      if (cached) {
+        console.log('CACHE HIT: ' + cacheKey)
+        return res.status(200).json(JSON.parse(cached))
+      }
+    } catch (cacheErr) {
+      console.log('Redis okuma hatası (DB ile devam) ❌', cacheErr.message)
+    }
+
+    // 2) Cache boş -> MongoDB'den çek
     const universiteler = await University.find().skip(atla).limit(limit)
+
+    // 3) Cache'e yaz (60 sn TTL). Yazma hatası endpoint'i engellemesin.
+    try {
+      await redis.set(cacheKey, JSON.stringify(universiteler), 'EX', 60)
+    } catch (cacheErr) {
+      console.log('Redis yazma hatası (yok sayıldı) ❌', cacheErr.message)
+    }
+
+    console.log('CACHE MISS: ' + cacheKey)
     res.status(200).json(universiteler)
 
   } catch (err) {
